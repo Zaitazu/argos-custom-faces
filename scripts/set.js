@@ -60,7 +60,7 @@ export const ARGOS_SETS = [
     id: "lumina-cleric",
     name: "Lumina Cleric",
     bump: true,
-    group : "OOTA",
+    group : "AOTA",
     d10Mode: "auto"
   },
   //Sheshbarian - AOTA
@@ -68,7 +68,39 @@ export const ARGOS_SETS = [
     id: "sheshbarian",
     name: "Sheshbarian",
     bump: true,
-    group : "OOTA",
+    group : "AOTA",
+    d10Mode: "auto"
+  },
+  //300 - AOTA
+  {
+    id: "300",
+    name: "300",
+    bump: true,
+    group : "AOTA",
+    d10Mode: "auto"
+  },
+  //Valbite - AOTA
+  {
+    id: "valbite",
+    name: "Valbite",
+    bump: true,
+    group : "AOTA",
+    d10Mode: "auto"
+  },
+  //Camé - AOTA
+  {
+    id: "came",
+    name: "Camé",
+    bump: true,
+    group : "AOTA",
+    d10Mode: "auto"
+  },
+  //Dictat - AOTA
+  {
+    id: "dictat",
+    name: "Dictat",
+    bump: true,
+    group : "AOTA",
     d10Mode: "auto"
   }
 ];
