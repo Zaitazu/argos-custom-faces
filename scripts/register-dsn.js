@@ -27,6 +27,28 @@ export class PlaySoundBunny extends DiceSFX {
     }
 }
 
+export class PlaySoundMwiline extends DiceSFX {
+    static id = "Mwiline";
+    static specialEffectName = "MwilineSound";
+    static path = `${MODULE_PATH}/assets/mwiline.mp3`;
+    static PLAY_ONLY_ONCE_PER_MESH = true;
+    /**@override init */
+    static async init(){
+        game.audio.pending.push(function(){
+            foundry.audio.AudioHelper.preloadSound(PlaySoundMwiline.path);
+        }.bind(this));
+        return true;
+    }
+
+    /**@override play */
+    async play(){
+        foundry.audio.AudioHelper.play({
+            src: PlaySoundMwiline.path,
+            volume: this.volume
+		}, false);
+    }
+}
+
 /* -------------------------------------------- */
 /*  Dice So Nice                                */
 /* -------------------------------------------- */
@@ -37,6 +59,7 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
     return;
   }
   dice3d.addSFXMode(PlaySoundBunny);
+  dice3d.addSFXMode(PlaySoundMwiline);
   registerArgosSystems(dice3d, ARGOS_SETS);
 });
 
@@ -142,11 +165,6 @@ function registerArgosSystems(dice3d, sets) {
         bumpMax: d10Bump
       });
     }
-
-    console.log(
-      `[${MODULE_ID}] Registered set "${systemName}" as system "${systemId}"`
-    );
   }
-
   console.log(`[${MODULE_ID}] Registered ${sets.length} DSN system(s).`);
 }
