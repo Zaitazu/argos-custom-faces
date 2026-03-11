@@ -23,8 +23,8 @@
       }
     ]
   },
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/Zaitazu/argos-custom-faces",
+  "manifest": "https://github.com/Zaitazu/argos-custom-faces/releases/download/0.1.0/module.json",
+  "download": "https://github.com/Zaitazu/argos-custom-faces/releases/download/0.1.0/argos-custom-faces.zip",
   "license": "LICENSE"
 }
