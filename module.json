@@ -2,7 +2,7 @@
   "id": "argos-custom-faces",
   "title": "Argos - Faces custom joueurs",
   "description": "Ajoute des faces de dés personnalisées pour les joueurs de la campagne Valbise via Dice So Nice.",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Zaitazu"
