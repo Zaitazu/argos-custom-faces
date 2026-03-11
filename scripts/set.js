@@ -55,52 +55,52 @@ export const ARGOS_SETS = [
     group : "Valbise",
     d10Mode: "auto"
   },
-  //lumina cleric - AOTA
+  //lumina cleric - OOTA
   {
     id: "lumina-cleric",
     name: "Lumina Cleric",
     bump: true,
-    group : "AOTA",
+    group : "OOTA",
     d10Mode: "auto"
   },
-  //Sheshbarian - AOTA
+  //Sheshbarian - OOTA
   {
     id: "sheshbarian",
     name: "Sheshbarian",
     bump: true,
-    group : "AOTA",
+    group : "OOTA",
     d10Mode: "auto"
   },
-  //300 - AOTA
+  //300 - OOTA
   {
     id: "300",
     name: "300",
     bump: true,
-    group : "AOTA",
+    group : "OOTA",
     d10Mode: "auto"
   },
-  //Valbite - AOTA
+  //Valbite - OOTA
   {
     id: "valbite",
     name: "Valbite",
     bump: true,
-    group : "AOTA",
+    group : "OOTA",
     d10Mode: "auto"
   },
-  //Camé - AOTA
+  //Camé - OOTA
   {
     id: "came",
     name: "Camé",
     bump: true,
-    group : "AOTA",
+    group : "OOTA",
     d10Mode: "auto"
   },
-  //Dictat - AOTA
+  //Dictat - OOTA
   {
     id: "dictat",
     name: "Dictat",
     bump: true,
-    group : "AOTA",
+    group : "OOTA",
     d10Mode: "auto"
   }
 ];
