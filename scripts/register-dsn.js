@@ -1,9 +1,11 @@
 import { ARGOS_SETS } from "./set.js";
+import { ARGOS_TEXTURES } from "./textures.js";
 import { DiceSFX } from "../../dice-so-nice/api.js";
 
 const MODULE_ID = "argos-custom-faces";
 const MODULE_PATH = `modules/${MODULE_ID}`;
 const FACES_BASE = `${MODULE_PATH}/assets/faces/max`;
+const TEXTURES_BASE = `${MODULE_PATH}/assets/textures`;
 
 export class PlaySoundBunny extends DiceSFX {
     static id = "Bunny";
@@ -61,7 +63,40 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
   dice3d.addSFXMode(PlaySoundBunny);
   dice3d.addSFXMode(PlaySoundMwiline);
   registerArgosSystems(dice3d, ARGOS_SETS);
+  registerArgosTextures(dice3d, ARGOS_TEXTURES);
 });
+function registerArgosTextures(dice3d, textures) {
+  for (const rawTexture of textures) {
+    if (!rawTexture?.id || !rawTexture?.name || !rawTexture?.source) {
+      console.warn(`[${MODULE_ID}] Skipping invalid texture entry:`, rawTexture);
+      continue;
+    }
+
+    const textureId = String(rawTexture.id);
+    const textureName = String(rawTexture.name);
+    const source = `${TEXTURES_BASE}/${rawTexture.source}`;
+    const bump = rawTexture.bump ? `${TEXTURES_BASE}/${rawTexture.bump}` : null;
+    const composite = String(rawTexture.composite ?? "multiply");
+    const material = rawTexture.material ?? "plastic";
+
+    try {
+      dice3d.addTexture(textureId, {
+        name: textureName,
+        composite,
+        source,
+        bump,
+        material
+      });
+
+      console.log(`[${MODULE_ID}] Registered texture "${textureId}"`);
+    } catch (err) {
+      console.error(
+        `[${MODULE_ID}] Failed to register texture "${textureId}"`,
+        err
+      );
+    }
+  }
+}
 
 function registerArgosSystems(dice3d, sets) {
   const STANDARD_DICE = [
