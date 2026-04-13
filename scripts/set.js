@@ -47,10 +47,10 @@ export const ARGOS_SETS = [
     group : "Valbise",
     d10Mode: "auto"
   },
-  //wild barbarian - Valbise
+  //Echo Warrior - Valbise
   {
-    id: "wild-barbarian",
-    name: "Wild Barbarian",
+    id: "echo-warrior",
+    name: "Echo Warrior",
     bump: true,
     group : "Valbise",
     d10Mode: "auto"
